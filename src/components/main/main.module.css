@@ -1,0 +1,37 @@
+@value mediaQuery from '../../common/size.css';
+@value makerWhite from '../../common/colors.css';
+
+.maker {
+    width: 100%;
+    height: 100%;
+    max-width: 80rem;
+
+    display: flex;
+    flex-direction: column;
+    background-color: makerWhite;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+}
+
+.logout {
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 2em;
+    right: 2rem;
+    width: 3.5rem;
+    height: 1.5rem;
+    border: none;
+    border-radius: 16%;
+}
+
+
+@media screen and (max-width : mediaQuery) {
+    .container {
+        flex-direction: column;
+    }
+}
