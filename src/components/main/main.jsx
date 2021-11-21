@@ -1,4 +1,5 @@
 import React from 'react'
+import AddForm from '../add_form.jsx/add_form'
 // import Editor from '../editor/editor'
 import Footer from '../footer/footer'
 import Header from '../header/header'
@@ -12,8 +13,10 @@ export default function Main() {
             <Header></Header>
             <button className = {styles.logout}>Logout</button>
             <div className={styles.container}>
-                <div>edite</div>
-                <div>preview</div>
+                <div className = {styles.topContainer}>
+                    <AddForm></AddForm>
+                </div>
+                <div className = {styles.bottomContainer}></div>
             </div>
             <Footer></Footer>
         </section>

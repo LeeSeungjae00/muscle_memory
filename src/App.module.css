@@ -1,4 +1,4 @@
-@value makerGrey from  './common/colors.css';
+@value makerMain from  './common/colors.css';
 
 * {
   box-sizing: border-box;
@@ -9,5 +9,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: makerGrey;
+  background-color: makerMain;
 }
