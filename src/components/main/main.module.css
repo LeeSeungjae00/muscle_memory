@@ -1,11 +1,10 @@
 @value mediaQuery from '../../common/size.css';
 @value makerMain from '../../common/colors.css';
+@value makerBorder from '../../common/colors.css';
 
 .maker {
     width: 100%;
     height: 100%;
-    max-width: 80rem;
-
     display: flex;
     flex-direction: column;
     background-color: makerWhite;
@@ -16,6 +15,9 @@
     display: flex;
     min-height: 0;
     flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .logout {
@@ -38,5 +40,6 @@
 
 .bottomContainer{
     flex-basis: 35%;
-    background-color: makerMain;
+    border-top: 1px solid makerBorder;
+    
 }

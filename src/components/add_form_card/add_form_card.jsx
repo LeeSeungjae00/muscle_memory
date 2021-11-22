@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './add_form_card.module.css'
 
 export default function AddFormCard({card , onUpdate}) {
     const {event, sets, volume} = card;
@@ -15,6 +16,7 @@ export default function AddFormCard({card , onUpdate}) {
     return (
         <div>
             <input
+            className = {styles.formInput}
                 type="text"
                 name="event"
                 value={event}

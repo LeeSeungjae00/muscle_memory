@@ -1,0 +1,22 @@
+@value makerBorder from '../../common/colors.css';
+
+.formInput{
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #c9d1d9;
+    vertical-align: middle;
+    background-color: #0d1117;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    border: 1px solid makerBorder;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: 0 0 transparent;
+}
+
+.formInput:focus{
+    border-color: #1f6feb;
+    outline: none;
+    box-shadow: 0 0 0 3px #0c2d6b;;
+}
