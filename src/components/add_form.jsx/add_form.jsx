@@ -32,19 +32,26 @@ export default function AddForm() {
 
     const createOrUpdateCard = (card) => {
         setCards(cards => {
-            const updated = {...cards};
-            console.log(cards)
+            const updated = { ...cards };
             updated[card.id] = card;
+            return updated;
+        });
+    }
+
+    const onDelete = (card) => {
+        setCards(cards => {
+            const updated = { ...cards };
+            delete updated[card.id];
             return updated;
         });
     }
     return (
         <form className={styles.addForm}>
-            <button onClick = {onAddEvent}>plus</button>
+            <button onClick={onAddEvent}>plus</button>
             {Object.keys(cards).map((card) => {
                 return (
-                    <AddFormCard card = {cards[card]} onUpdate = {createOrUpdateCard}></AddFormCard>
-                )   
+                    <AddFormCard onDelete={onDelete} key={card} card={cards[card]} onUpdate={createOrUpdateCard}></AddFormCard>
+                )
             })}
         </form>
     )

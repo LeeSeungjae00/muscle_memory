@@ -1,5 +1,16 @@
 @value makerBorder from '../../common/colors.css';
 
+
+.formCard{
+    display: flex;
+    align-items: center;
+    border: 1px solid makerBorder;
+    justify-content: center;
+    border-radius: 6px;
+    padding: 0 0.3rem;
+}
+
+
 .formInput{
     padding: 5px 12px;
     font-size: 14px;
@@ -13,10 +24,52 @@
     border-radius: 6px;
     outline: none;
     box-shadow: 0 0 transparent;
+    flex-basis: 30%;
 }
 
 .formInput:focus{
     border-color: #1f6feb;
     outline: none;
     box-shadow: 0 0 0 3px #0c2d6b;;
+}
+
+.formSliders{
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+    padding: 1rem;
+    flex-basis: 40%;
+}
+
+.sliderLap{
+    display: flex;
+    align-items: center;
+}
+
+.sliderVal{
+    color :#c9d1d9;
+    font-size: 12px;
+    flex-basis: 50%;
+    padding-left: 1rem;
+}
+
+.totalVol{
+    display: flex;
+    flex-direction: column;
+    color: #c9d1d9;
+    flex-basis: 30%;
+}
+
+.totalVol>div{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.delete{
+    border: 1px solid makerBorder;
+    border-radius: 6px;
+    background-color: #21262d;
+    color: #c9d1d9;
+    width: 22px;
+    height: 22px;
 }

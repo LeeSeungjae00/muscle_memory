@@ -1,4 +1,9 @@
+@value makerBorder from '../../common/colors.css';
+
+
 .addForm{
     flex-basis: 50%;
     height: 100%;
+    padding: 0.5rem;
+    overflow-y: auto;
 }
