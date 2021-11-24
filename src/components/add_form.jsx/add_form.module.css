@@ -1,9 +1,67 @@
 @value makerBorder from '../../common/colors.css';
 
 
-.addForm{
+.addForm {
     flex-basis: 50%;
     height: 100%;
     padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
     overflow-y: auto;
+    height: 100%;
+}
+
+.eventAddBtn {
+    align-self: end;
+    border-radius: 6px 6px 0px 0px;
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #21262d;
+    height: 1.5rem;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+.cards::-webkit-scrollbar {
+    width: 5px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+}
+
+.cards::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-right: 1px solid makerBorder;
+}
+
+.submitArea{
+    display: flex;
+    color: #c9d1d9;
+    font-size: 1.5rem;
+    font-weight: 600;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid makerBorder;
+    padding-top: 0.3em;
+}
+
+.commit{
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;;
+    background-color: #238636;
+    border-color: rgba(240,246,252,0.1);
+    box-shadow: 0 0 transparent,0 0 transparent;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.commit:hover{
+    background-color: #2ea043;
 }

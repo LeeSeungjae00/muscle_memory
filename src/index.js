@@ -10,6 +10,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { applyMiddleware, createStore } from 'redux';
 import ReduxThunk from 'redux-thunk';
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
 
 const customHistory = createBrowserHistory();
 
@@ -18,11 +20,14 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(
     ReduxThunk.withExtraArgument({ history: customHistory })))
 ); // 여러개의 미들웨어를 적용 할 수 있습니다.
+const persistor = persistStore(store)
 
 ReactDOM.render(
   <BrowserRouter >
     <Provider store={store}>
-      <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </BrowserRouter>,
   document.getElementById('root')

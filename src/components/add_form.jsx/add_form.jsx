@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { getNowDate } from '../../lib/dateConverter';
+import { setDB } from '../../service/dbUtill';
 import AddFormCard from '../add_form_card/add_form_card';
 import styles from './add_form.module.css'
 
@@ -16,10 +17,11 @@ function getInitData() {
     }
 }
 
-export default function AddForm() {
+export default function AddForm({userId}) {
     const [cards, setCards] = useState(
         getInitData
     );
+    
     const onAddEvent = (e) => {
         e.preventDefault();
         createOrUpdateCard({
@@ -45,14 +47,31 @@ export default function AddForm() {
             return updated;
         });
     }
+    const onCommit = (e) => {
+        e.preventDefault();
+        setDB(userId, getNowDate(), cards);
+    }
     return (
+        
         <form className={styles.addForm}>
-            <button onClick={onAddEvent}>plus</button>
-            {Object.keys(cards).map((card) => {
-                return (
-                    <AddFormCard onDelete={onDelete} key={card} card={cards[card]} onUpdate={createOrUpdateCard}></AddFormCard>
-                )
-            })}
+            <button className={styles.eventAddBtn} onClick={onAddEvent}>운동 종목 추가</button>
+            <div className={styles.cards}>
+                {Object.keys(cards).map((card) => {
+                    return (
+                        <AddFormCard onDelete={onDelete} key={card} card={cards[card]} onUpdate={createOrUpdateCard}></AddFormCard>
+                    )
+                })}
+            </div>
+            <div className={styles.submitArea}>
+                <div>
+                    Today Volume : {cards &&
+                        Object.keys(cards).map((card) => cards[card].sets * cards[card].volume).
+                            reduce((pre, cur) => pre + cur)
+                    } Kg
+                </div>
+                <button className={styles.commit} onClick={onCommit}>Commit</button>
+
+            </div>
         </form>
     )
 }
