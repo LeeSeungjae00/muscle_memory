@@ -16,9 +16,10 @@ export const getUserData = createPromiseThunk(AUTH_LOGIN, login_service);
 
 const initialState = {
     userData: reducerUtils.initial(),
+
 };
 
-export default function login(state = initialState, action) {
+export default function auth(state = initialState, action) {
     switch (action.type) {
       case AUTH_LOGIN:
       case AUTH_LOGIN_SUCCESS:

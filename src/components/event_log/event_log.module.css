@@ -1,0 +1,63 @@
+@value makerBorder from '../../common/colors.css';
+
+
+.logLap{
+    margin-left: 2rem;
+    display: flex;
+    min-height: 2rem;
+    flex-direction: column;
+    border-left: 2px solid #21262d;
+}
+
+/* .logLap::before{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: #21262d;
+} */
+
+.logDot{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    margin-left: -8px;
+    margin-top: 3px;
+    color: white;
+    align-items: center;
+    border: 2px solid #21262d;
+    background-color: rgb(13, 17, 23);
+    border-radius: 50%;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.logDate{
+    font-weight: bold;
+}
+
+.mainLog{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.detailBtn{
+    align-items: flex-end;
+    background-color: transparent;
+    color: #8b949e;
+    border: none;
+    height: fit-content;
+}
+
+.detailBtn:hover{
+    color: #21262d;
+    background-color: #8b949e;
+    border-radius: 6px;
+}

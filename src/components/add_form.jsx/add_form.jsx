@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { getNowDate } from '../../lib/dateConverter';
-import { setDB } from '../../service/dbUtill';
+import { setGetEventData } from '../../modules/card_data';
 import AddFormCard from '../add_form_card/add_form_card';
 import styles from './add_form.module.css'
-
+import { useDispatch } from 'react-redux';
 
 function getInitData() {
     const id = Date.now();
@@ -18,6 +18,7 @@ function getInitData() {
 }
 
 export default function AddForm({userId}) {
+    const dispatch = useDispatch();
     const [cards, setCards] = useState(
         getInitData
     );
@@ -47,9 +48,10 @@ export default function AddForm({userId}) {
             return updated;
         });
     }
-    const onCommit = (e) => {
+    const onCommit = async (e) => {
         e.preventDefault();
-        setDB(userId, getNowDate(), cards);
+        dispatch(setGetEventData({userId, date : getNowDate(), cards}));
+        setCards(getInitData());
     }
     return (
         

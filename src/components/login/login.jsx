@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 export default function Login() {
     const dispatch = useDispatch();
-    const { data, loading, error } = useSelector(state => state.login.userData);
+    const { data, loading, error } = useSelector(state => state.auth.userData);
     const navigete = useNavigate();
     
 
