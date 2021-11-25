@@ -1,4 +1,4 @@
-@value makerGreen, makerLightPink, makerWhite from '../../common/colors.css';
+@value makerGreen, makerLightPink, makerWhite, makerBorder from '../../common/colors.css';
 
 .login {
   width: 30em;
@@ -6,7 +6,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: makerWhite;
+  background-color: #161b22;
+  border: 1px solid #21262d;
 }
 
 .list {
@@ -28,10 +29,54 @@
   border-radius: 1.2rem;
   background-color: transparent;
   cursor: pointer;
-  border: 0.2rem solid makerGreen;
+  border: 0.2rem solid makerBorder;
   outline: 0;
+  margin-top: 0.5em;
+  color: #c9d1d9;
 }
 
 .button:hover {
   background-color: makerLightPink;
+}
+
+.formInput{
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #c9d1d9;
+  vertical-align: middle;
+  background-color: #0d1117;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid makerBorder;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: 0 0 transparent;
+  flex-basis: 30%;
+  width: 100%;
+}
+
+.formInput:focus{
+  border-color: #1f6feb;
+  outline: none;
+  box-shadow: 0 0 0 3px #0c2d6b;;
+}
+
+.email{
+  display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 0 1rem;
+    color: #c9d1d9;
+}
+
+.email>p{
+  margin: 0.5rem 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+hr{
+  margin: 0.5rem;
+  border-color: makerBorder;
 }

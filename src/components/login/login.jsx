@@ -11,24 +11,33 @@ export default function Login() {
     const dispatch = useDispatch();
     const { data, loading, error } = useSelector(state => state.auth.userData);
     const navigate = useNavigate();
-    
+
 
     const onLogin = async (e) => {
         dispatch(getUserData(e.currentTarget.textContent));
     }
 
     useEffect(() => {
-        if(data && !error) navigate('main');
+        if (data && !error) navigate('main');
     }, [data])
 
     return (
         <section className={styles.login}>
             <Header />
             <section>
-                <h1>Login</h1>
+                {/* <div className={styles.email}>
+                    <p>Email address</p>
+                    <input className={styles.formInput} type="email" />
+                    <p>Password</p>
+                    <input className={styles.formInput} type="password" />
+                    <button className={styles.button} onClick={onLogin}>
+                        Sign in
+                    </button>
+                </div>
+                <hr></hr> */}
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <button className={styles.button} onClick = {onLogin}>
+                        <button className={styles.button} onClick={onLogin}>
                             Google
                         </button>
                     </li>

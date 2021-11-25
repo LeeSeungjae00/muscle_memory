@@ -8,10 +8,13 @@
   position: relative;
   display: flex;
   align-content: center;
+  padding-left: 1rem;
 }
 
 .logo {
-  width: 3em;
+  width: 2em;
+  height: fit-content;
+  padding-top: 0.5rem;
 }
 
 .title {

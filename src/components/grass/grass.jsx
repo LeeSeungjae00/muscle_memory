@@ -16,11 +16,11 @@ export default function Grass({ date , totalVolume }) {
 
 
 const checkTotalVolume = (total_volume) => {
-    if (total_volume > 5000) {
+    if (total_volume > 2000) {
         return styles.grass_levelfour;
-    } else if (total_volume > 4000) {
+    } else if (total_volume > 1500) {
         return styles.grass_levelThree;
-    } else if (total_volume > 1300) {
+    } else if (total_volume > 1000) {
         return styles.grass_levelTwo;
     } else if(total_volume !== 0){
         return styles.grass_levelOne;
