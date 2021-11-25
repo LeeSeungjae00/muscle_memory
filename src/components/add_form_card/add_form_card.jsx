@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './add_form_card.module.css'
 import { Slider } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function AddFormCard({ card, onUpdate , onDelete}) {
     const { event, sets, volume } = card;
@@ -83,7 +84,7 @@ export default function AddFormCard({ card, onUpdate , onDelete}) {
                 <label>Total Volume</label>
                 <div>{sets * volume} kg</div>
             </div>
-            <button onClick = {() => onDelete(card)} className = {styles.delete}>X</button>
+            <button onClick = {() => onDelete(card)} className = {styles.delete}><CloseIcon fontSize='sm'/></button>
             
         </div>
     )

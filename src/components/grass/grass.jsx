@@ -1,31 +1,30 @@
+import { Tooltip } from '@mui/material';
 import React from 'react'
+import { useState , useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import styles from '../lawn/lawn.module.css'
 
-export default function Grass({ date }) {
-    const { data, loading, error } = useSelector(state => state.cardData.eventData);
-
+export default function Grass({ date , totalVolume }) {
     return (
-        <div className={checkTotalVolume(data, date)} />
+        <Tooltip arrow placement="top"
+         title={`${totalVolume === 0 ? 'No Volume' : `${totalVolume}Kg`} on ${date}`}>
+            <div className={checkTotalVolume(totalVolume)} />
+        </Tooltip>
+
     )
 }
 
 
-const checkTotalVolume = (data , date) => {
-    if(!data) return styles.grass_basic;
-    if (data[date]) {
-        if (data[date].total_volume > 5000) {
-            return styles.grass_levelfour;
-        } else if (data[date].total_volume < 5000 &&
-            data[date].total_volume > 4000) {
-            return styles.grass_levelThree;
-            return;
-        } else if (data[date].total_volume < 4000 &&
-            data[date].total_volume > 1300) {
-            return styles.grass_levelTwo;
-        } else {
-            return styles.grass_levelOne;
-        }
+const checkTotalVolume = (total_volume) => {
+    if (total_volume > 5000) {
+        return styles.grass_levelfour;
+    } else if (total_volume > 4000) {
+        return styles.grass_levelThree;
+    } else if (total_volume > 1300) {
+        return styles.grass_levelTwo;
+    } else if(total_volume !== 0){
+        return styles.grass_levelOne;
+    } else{
+        return styles.grass_basic;
     }
-    return styles.grass_basic;
 }

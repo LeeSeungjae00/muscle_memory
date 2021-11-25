@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 export default function Login() {
     const dispatch = useDispatch();
     const { data, loading, error } = useSelector(state => state.auth.userData);
-    const navigete = useNavigate();
+    const navigate = useNavigate();
     
 
     const onLogin = async (e) => {
@@ -18,7 +18,7 @@ export default function Login() {
     }
 
     useEffect(() => {
-        if(data && !error) navigete('main');
+        if(data && !error) navigate('main');
     }, [data])
 
     return (

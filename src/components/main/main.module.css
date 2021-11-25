@@ -21,15 +21,17 @@
 }
 
 .logout {
-    background-color: black;
+    background-color: transparent;
     color: white;
     position: fixed;
-    top: 2em;
+    top: 1.7em;
     right: 2rem;
-    width: 3.5rem;
-    height: 1.5rem;
     border: none;
     border-radius: 16%;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .topContainer{

@@ -3,26 +3,32 @@ import { useCallback } from 'react';
 import { convertDateFormat } from '../../lib/dateConverter';
 import Grass from '../grass/grass';
 import styles from './lawn.module.css'
+import { useSelector } from 'react-redux';
 
 export default function Lawn() {
-    const rendering = useCallback(
+    const { data, loading, error } = useSelector(state => state.cardData.eventData);
+    const grassRendering = useCallback(
         () => {
             let date = new Date();
             let day = (date.getDay() - 6) * -1;
             const result = [];
             for (let i = 0; i < 371 - day; i++) {
-                result.unshift(<Grass key={i} date={convertDateFormat(date)} />);
+                const sendDate = convertDateFormat(date);
+                let sendTotalVol = 0;
+                if(data){
+                    if(data[sendDate]) sendTotalVol = data[sendDate].total_volume
+                }
+                result.unshift(<Grass key={i} totalVolume ={sendTotalVol} date={sendDate} />);
                 date.setDate(date.getDate() - 1);
             }
             return result;
-        },
-    )
+        },[data])
     return (
         <div className={styles.lawnContent}>
-            {/* {
-                rendering()
-            } */}
-            <div className={styles.yearTotal}>10000Kg in the last year </div>
+            <div className={styles.yearTotal}>
+                {data && Object.keys(data).map((obj) => data[obj].total_volume).reduce((pre, curr) => pre + curr)}
+                Kg in the last year 
+            </div>
             <div className={styles.lawnMain}>
                 <div className={styles.months}>
                     <div className={styles.month}>Nov</div>
@@ -45,7 +51,7 @@ export default function Lawn() {
                         <div className={styles.day}>Wed</div>
                         <div className={styles.day}>Fri</div>
                     </div>
-                    <div className={styles.lawn}>{rendering()}</div>
+                    <div className={styles.lawn}>{grassRendering()}</div>
                 </div>
                 <div className={styles.lawnBottm}>
                     <a href="https://lsjportfolio.netlify.app/">Learn how we count volume</a>

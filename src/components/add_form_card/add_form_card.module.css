@@ -70,6 +70,6 @@
     border-radius: 6px;
     background-color: #21262d;
     color: #c9d1d9;
-    width: 22px;
-    height: 22px;
+    padding: 2px;
+    line-height: 1px;
 }

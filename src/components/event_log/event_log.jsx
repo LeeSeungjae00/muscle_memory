@@ -2,6 +2,8 @@ import React from 'react'
 import styles from './event_log.module.css'
 import Collapse from '@mui/material/Collapse';
 import { useState } from 'react';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 export default function EventLog({ date, data }) {
     const { cards, total_volume } = data;
@@ -18,12 +20,12 @@ export default function EventLog({ date, data }) {
                         {`${date}'s Total volume ${total_volume} Kg`}
                     </div>
                 </div>
-                <button onClick={onDetail} className={styles.detailBtn}>Detail {check ? '☝' : '↓'}</button>
+                <button onClick={onDetail} className={styles.detailBtn}>{check ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/> }</button>
             </div>
             <div>
                 <Collapse in={check}>
                     <ul className={styles.detailList}>
-                        {Object.keys(cards)
+                        {cards && Object.keys(cards)
                             .map((card) => <li key = {card}>
                                 {`${cards[card].event} (을)를 ${cards[card].volume}kg 씩 ${cards[card].sets} 세트 했습니다.`}
                                 </li>)}
