@@ -5,8 +5,8 @@ import styles from './header.module.css'
     return (
         <header className = {styles.header}>
             {onLogout && <button className={styles.logout} onClick={onLogout}>Logout</button>}
-            <img className = {styles.logo} src="/images/logo.png" alt="logo" />
-            <h1 className = {styles.title}>Muscle Memory</h1>
+            <img className = {styles.logo} src="/logo.png" alt="logo" />
+            <h1 className = {styles.title}>Muscle hub</h1>
         </header>
     )
 })
