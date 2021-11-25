@@ -23,7 +23,8 @@ export default function Lawn() {
                 rendering()
             } */}
             <div className={styles.yearTotal}>10000Kg in the last year </div>
-            <div><div className={styles.months}>
+            <div className={styles.lawnMain}>
+                <div className={styles.months}>
                     <div className={styles.month}>Nov</div>
                     <div className={styles.month}>Dec</div>
                     <div className={styles.month}>Jan</div>
@@ -38,13 +39,26 @@ export default function Lawn() {
                     <div className={styles.month}>Oct</div>
                     <div className={styles.month}>Nov</div>
                 </div>
-                <div className={styles.lawnMain}>
+                <div className={styles.lawnInner}>
                     <div className={styles.days}>
                         <div className={styles.day}>Mon</div>
                         <div className={styles.day}>Wed</div>
                         <div className={styles.day}>Fri</div>
                     </div>
                     <div className={styles.lawn}>{rendering()}</div>
+                </div>
+                <div className={styles.lawnBottm}>
+                    <a href="https://lsjportfolio.netlify.app/">Learn how we count volume</a>
+                    <div className={styles.grassColorChart}>
+                        Less
+                        <div className={styles.grass_basic} />
+                        <div className={styles.grass_levelOne} />
+                        <div className={styles.grass_levelTwo} />
+                        <div className={styles.grass_levelThree} />
+                        <div className={styles.grass_levelfour} />
+                        More
+                    </div>
+
                 </div>
             </div>
         </div>

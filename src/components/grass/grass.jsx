@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import styles from './grass.module.css'
+import styles from '../lawn/lawn.module.css'
 
 export default function Grass({ date }) {
     const { data, loading, error } = useSelector(state => state.cardData.eventData);

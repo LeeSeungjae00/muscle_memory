@@ -1,3 +1,5 @@
+@value makerBorder from '../../common/colors.css';
+
 .lawnContent {
     width: 100%;
     height: 100%;
@@ -22,8 +24,14 @@
     width: 100%;
 
 }
+.lawnMain{
+    padding: 1rem;
+    border: 1px solid makerBorder;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
 
-.lawnMain {
+.lawnInner {
     display: flex;
     /* flex-direction: column; */
 }
@@ -49,4 +57,71 @@
     font-size: 0.4rem;
     color: #c9d1d9;
     font-weight: 600;
+}
+
+.grass_basic {
+    border-radius: 1.6px; 
+    margin: 2px; 
+    width: 11px; 
+    height: 11px;
+    background-color: #161b22;
+    border-color: rgba(27, 31, 35, 0.06);
+}
+
+.grass_levelOne {
+    border-radius: 1.6px; 
+    margin: 2px; 
+    width: 11px; 
+    height: 11px;
+    background-color: #0e4429;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.grass_levelTwo {
+    border-radius: 1.6px; 
+    margin: 2px; 
+    width: 11px; 
+    height: 11px;
+    background-color: #006d32;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+.grass_levelThree {
+    border-radius: 1.6px; 
+    margin: 2px; 
+    width: 11px; 
+    height: 11px;
+    background-color: #26a641;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+.grass_levelfour {
+    border-radius: 1.6px; 
+    margin: 2px; 
+    width: 11px; 
+    height: 11px;
+    background-color: #39d353;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.lawnBottm{
+    justify-content: space-between;
+    display: flex;
+    padding-top: 0.5rem;
+    color: #8b949e;
+    font-weight: 500;
+}
+
+.grassColorChart{
+    display: flex;
+    font-size: 12px;
+    
+}
+
+.lawnBottm>a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #8b949e;
+}
+
+.lawnBottm>a:hover{
+    color: #58a6ff;
 }
