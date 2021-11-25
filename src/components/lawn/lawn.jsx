@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCallback } from 'react';
-import { convertDateFormat } from '../../lib/dateConverter';
+import { convertDateFormat, monthLinkedList } from '../../lib/dateConverter';
 import Grass from '../grass/grass';
 import styles from './lawn.module.css'
 import { useSelector } from 'react-redux';
@@ -23,6 +23,18 @@ export default function Lawn() {
             }
             return result;
         },[data])
+
+    const monthRendering = useCallback(
+        () => {
+            let date = new Date();
+            let day = date.getMonth();
+            const result = [];
+            for(let i = 0 ; i < 13 ; i ++){
+                result.push(<div className={styles.month}>{monthLinkedList[day].month}</div>);
+                day = monthLinkedList[day].next;
+            }
+            return result;
+        },[data])
     return (
         <div className={styles.lawnContent}>
             <div className={styles.yearTotal}>
@@ -31,19 +43,7 @@ export default function Lawn() {
             </div>
             <div className={styles.lawnMain}>
                 <div className={styles.months}>
-                    <div className={styles.month}>Nov</div>
-                    <div className={styles.month}>Dec</div>
-                    <div className={styles.month}>Jan</div>
-                    <div className={styles.month}>Feb</div>
-                    <div className={styles.month}>Mar</div>
-                    <div className={styles.month}>Apr</div>
-                    <div className={styles.month}>May</div>
-                    <div className={styles.month}>Jun</div>
-                    <div className={styles.month}>Jul</div>
-                    <div className={styles.month}>Aug</div>
-                    <div className={styles.month}>Sep</div>
-                    <div className={styles.month}>Oct</div>
-                    <div className={styles.month}>Nov</div>
+                    {monthRendering()}
                 </div>
                 <div className={styles.lawnInner}>
                     <div className={styles.days}>
