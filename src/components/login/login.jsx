@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 export default function Login() {
     const dispatch = useDispatch();
-    const { data, loading, error } = useSelector(state => state.auth.userData);
+    const { data, error } = useSelector(state => state.auth.userData);
     const navigate = useNavigate();
 
 
@@ -19,7 +19,7 @@ export default function Login() {
 
     useEffect(() => {
         if (data && !error) navigate('main');
-    }, [data])
+    }, [data, error, navigate])
 
     return (
         <section className={styles.login}>

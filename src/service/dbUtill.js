@@ -1,5 +1,5 @@
 import "./firebase";
-import { getDatabase, ref, set, remove, onValue, child, get } from "firebase/database";
+import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
 
 const db = getDatabase();
 

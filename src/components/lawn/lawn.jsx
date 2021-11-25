@@ -6,7 +6,7 @@ import styles from './lawn.module.css'
 import { useSelector } from 'react-redux';
 
 export default function Lawn() {
-    const { data, loading, error } = useSelector(state => state.cardData.eventData);
+    const { data } = useSelector(state => state.cardData.eventData);
     const grassRendering = useCallback(
         () => {
             let date = new Date();
@@ -30,11 +30,11 @@ export default function Lawn() {
             let day = date.getMonth();
             const result = [];
             for(let i = 0 ; i < 13 ; i ++){
-                result.push(<div className={styles.month}>{monthLinkedList[day].month}</div>);
+                result.push(<div key={i} className={styles.month}>{monthLinkedList[day].month}</div>);
                 day = monthLinkedList[day].next;
             }
             return result;
-        },[data])
+        } , [])
     return (
         <div className={styles.lawnContent}>
             <div className={styles.yearTotal}>

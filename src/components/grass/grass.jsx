@@ -1,7 +1,5 @@
 import { Tooltip } from '@mui/material';
 import React from 'react'
-import { useState , useEffect} from 'react';
-import { useSelector } from 'react-redux';
 import styles from '../lawn/lawn.module.css'
 
 export default function Grass({ date , totalVolume }) {

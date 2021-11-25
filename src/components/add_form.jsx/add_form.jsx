@@ -72,8 +72,8 @@ export default function AddForm({userId}) {
             <div className={styles.submitArea}>
                 <div>
                     Today Volume : {cards &&
-                        Object.keys(cards).map((card) => cards[card].sets * cards[card].volume).
-                            reduce((pre, cur) => pre + cur)
+                        Object.keys(cards).map((card) => cards[card].sets * cards[card].volume)
+                                          .reduce((pre, cur) => pre + cur)
                     } Kg
                 </div>
                 <button className={styles.commit} onClick={onCommit}>Commit</button>

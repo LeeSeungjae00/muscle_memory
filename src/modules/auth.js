@@ -1,10 +1,8 @@
-import {login_service , logout_service} from '../service/auth_service';
+import {login_service} from '../service/auth_service';
 import {
   createPromiseThunk,
   reducerUtils,
-  handleAsyncActions,
-  createPromiseThunkById,
-  handleAsyncActionsById
+  handleAsyncActions
 } from '../lib/asyncUtils';
 
 

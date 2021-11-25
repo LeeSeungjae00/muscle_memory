@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 
 // Promise에 기반한 Thunk를 만들어주는 함수입니다.
 export const createPromiseThunk = (type, promiseCreator) => {

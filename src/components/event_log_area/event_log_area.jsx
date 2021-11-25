@@ -5,11 +5,11 @@ import EventLog from '../event_log/event_log';
 import styles from './event_log_area.module.css';
 
 export default function EventLogArea({ userId }) {
-    const { data, loading, error } = useSelector(state => state.cardData.eventData);
+    const { data } = useSelector(state => state.cardData.eventData);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getEventData({ userId }))
-    }, [userId])
+    }, [userId, dispatch])
     return (
         <div className = {styles.eventLogArea}>
             <ul className={styles.eventLog}>
