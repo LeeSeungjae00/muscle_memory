@@ -50,7 +50,12 @@ export default function AddForm({userId}) {
     }
     const onCommit = async (e) => {
         e.preventDefault();
-        dispatch(setGetEventData({userId, date : getNowDate(), cards}));
+        const total_volume = Object.keys(cards)
+                            .map((card) => cards[card].sets * cards[card].volume)
+                            .reduce((pre, cur) => pre + cur)
+        const result = { cards , total_volume};
+
+        dispatch(setGetEventData({userId, date : getNowDate(), result}));
         setCards(getInitData());
     }
     return (

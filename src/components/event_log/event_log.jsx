@@ -4,14 +4,12 @@ import Collapse from '@mui/material/Collapse';
 import { useState } from 'react';
 
 export default function EventLog({ date, data }) {
-    const total_volume = Object.keys(data)
-        .map((event) => data[event].sets * data[event].volume)
-        .reduce((pre, curr) => pre + curr);
+    const { cards, total_volume } = data;
     const [check, setCheck] = useState(true);
     const onDetail = () => {
         setCheck(check => !check);
     }
-    return (<>
+    return (
         <li className={styles.logLap}>
             <div className={styles.mainLog}>
                 <div style={{ display: 'flex' }}>
@@ -22,14 +20,16 @@ export default function EventLog({ date, data }) {
                 </div>
                 <button onClick={onDetail} className={styles.detailBtn}>Detail {check ? '☝' : '↓'}</button>
             </div>
-            <Collapse in={check}>
-                <ul className = {styles.detailList}>
-                    {Object.keys(data)
-                        .map((event) => <li>{`${data[event].event} (을)를 ${data[event].volume}kg 씩 ${data[event].sets} 세트 했습니다.`}</li>)}
-                </ul>
-            </Collapse>
+            <div>
+                <Collapse in={check}>
+                    <ul className={styles.detailList}>
+                        {Object.keys(cards)
+                            .map((card) => <li key = {card}>
+                                {`${cards[card].event} (을)를 ${cards[card].volume}kg 씩 ${cards[card].sets} 세트 했습니다.`}
+                                </li>)}
+                    </ul>
+                </Collapse>
+            </div>
         </li>
-
-    </>
     )
 }

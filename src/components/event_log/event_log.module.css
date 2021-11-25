@@ -1,10 +1,8 @@
 @value makerBorder from '../../common/colors.css';
 
-
 .logLap {
     margin-left: 2rem;
     display: flex;
-    min-height: 2rem;
     flex-direction: column;
     border-left: 2px solid #21262d;
 }
@@ -45,7 +43,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-
+    padding-top: 0.5rem;
 }
 
 .detailBtn {

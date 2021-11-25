@@ -7,6 +7,7 @@ import Header from '../header/header'
 // import Preview from '../preview/preview'
 import styles from './main.module.css' 
 import EventLogArea from '../event_log_area/event_log_area'
+import Lawn from '../lawn/lawn'
 
 export default function Main() {
     const { data } = useSelector(state => state.auth.userData);
@@ -20,7 +21,7 @@ export default function Main() {
                     <EventLogArea userId = {data.user.uid}/>
                 </div>
                 <div className = {styles.bottomContainer}>
-                    
+                    <Lawn></Lawn>
                 </div>
             </div>
             <Footer></Footer>

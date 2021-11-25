@@ -42,5 +42,6 @@
 .bottomContainer{
     flex-basis: 35%;
     border-top: 1px solid makerBorder;
+    max-height: 35%;
     
 }

@@ -4,8 +4,8 @@ import { getDatabase, ref, set, remove, onValue, child, get } from "firebase/dat
 const db = getDatabase();
 
 export function setGetDB(params) {
-    const {userId, date , cards} = params;
-    set(ref(db, `${userId}/${date}`), cards);
+    const {userId, date , result} = params;
+    set(ref(db, `${userId}/${date}`), result);
     return getDB({userId});
 }
 export async function getDB (params) {

@@ -1,10 +1,28 @@
 .eventLog{
     color: #c9d1d9;
-    flex-basis: 50%;
     height: 100%;
-    padding:2rem;
     display: flex;
     flex-direction: column;
     margin: 0;
+    overflow-y: auto;
 }
 
+.eventLogArea{
+    height: 100%;
+    padding: 2rem;
+    flex-basis: 50%;
+}
+
+.eventLog::-webkit-scrollbar {
+    width: 5px;
+}
+
+.eventLog::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+}
+
+.eventLog::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-right: 1px solid makerBorder;
+}
