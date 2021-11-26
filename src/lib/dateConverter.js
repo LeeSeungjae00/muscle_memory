@@ -21,17 +21,17 @@ export function convertDateFormat(today) {
 }
 
 
-export const monthLinkedList = [
-    { month: 'Jan' , next :  1},
-    { month: 'Feb' , next :  2},
-    { month: 'Mar' , next :  3},
-    { month: 'Apr' , next :  4},
-    { month: 'May' , next :  5},
-    { month: 'Jun' , next :  6},
-    { month: 'Jul' , next :  7},
-    { month: 'Aug' , next :  8},
-    { month: 'Sep' , next :  9},
-    { month: 'Oct' , next :  10},
-    { month: 'Nov' , next :  11},
-    { month: 'Dec' , next :  0},
+export const monthArray = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct' ,
+    'Nov' ,
+    'Dec',
 ]

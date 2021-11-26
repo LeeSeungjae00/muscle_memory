@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCallback } from 'react';
-import { convertDateFormat, monthLinkedList } from '../../lib/dateConverter';
+import { convertDateFormat, monthArray } from '../../lib/dateConverter';
 import Grass from '../grass/grass';
 import styles from './lawn.module.css'
 import { useSelector } from 'react-redux';
@@ -27,11 +27,11 @@ export default function Lawn() {
     const monthRendering = useCallback(
         () => {
             let date = new Date();
-            let day = date.getMonth();
+            let month = date.getMonth();
             const result = [];
             for(let i = 0 ; i < 13 ; i ++){
-                result.push(<div key={i} className={styles.month}>{monthLinkedList[day].month}</div>);
-                day = monthLinkedList[day].next;
+                result.push(<div key={i} className={styles.month}>{monthArray[month]}</div>);
+                month = (month + 1) % 12;
             }
             return result;
         } , [])
