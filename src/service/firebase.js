@@ -5,13 +5,13 @@ import { initializeApp } from "firebase/app";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC5iyEWI46R_i_2Df7uaVtY1X_KN3yd5IA",
-    authDomain: "muscle-memory-445df.firebaseapp.com",
-    projectId: "muscle-memory-445df",
-    storageBucket: "muscle-memory-445df.appspot.com",
-    messagingSenderId: "64324692284",
-    appId: "1:64324692284:web:665bc0da799c4c15b61639",
-    measurementId: "G-748B4505B9"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId:process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_PROJECT_ID
 };
 
 // Initialize Firebase
