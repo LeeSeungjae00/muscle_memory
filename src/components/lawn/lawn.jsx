@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useCallback } from 'react';
 import { convertDateFormat, monthArray } from '../../lib/dateConverter';
 import Grass from '../grass/grass';
@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 export default function Lawn() {
     const { data } = useSelector(state => state.cardData.eventData);
-    const grassRendering = useCallback(
+    const grassRendering = useMemo(
         () => {
             let date = new Date();
             let day = (date.getDay() - 6) * -1;
@@ -24,7 +24,7 @@ export default function Lawn() {
             return result;
         },[data])
 
-    const monthRendering = useCallback(
+    const monthRendering = useMemo(
         () => {
             let date = new Date();
             let month = date.getMonth();
@@ -43,7 +43,7 @@ export default function Lawn() {
             </div>
             <div className={styles.lawnMain}>
                 <div className={styles.months}>
-                    {monthRendering()}
+                    {monthRendering}
                 </div>
                 <div className={styles.lawnInner}>
                     <div className={styles.days}>
@@ -51,7 +51,7 @@ export default function Lawn() {
                         <div className={styles.day}>Wed</div>
                         <div className={styles.day}>Fri</div>
                     </div>
-                    <div className={styles.lawn}>{grassRendering()}</div>
+                    <div className={styles.lawn}>{grassRendering}</div>
                 </div>
                 <div className={styles.lawnBottm}>
                     <a href="https://lsjportfolio.netlify.app/">Learn how we count volume</a>
